@@ -126,8 +126,6 @@ public class HomeFrame extends JFrame {
 		Local local = new Local();
 		Cadastro cad = new Cadastro();
 		
-		//Local.setCadastro(cad);
-		this.setCadastro(cad);
 		
 		
 		

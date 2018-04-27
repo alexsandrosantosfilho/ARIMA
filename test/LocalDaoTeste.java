@@ -23,9 +23,7 @@ public class LocalDaoTeste {
 		assertSame("Consulta falhou",local, localConsulta);
 	}
 	
-	
-	
-	
+
 	
 	@Test
 	public void remove() {

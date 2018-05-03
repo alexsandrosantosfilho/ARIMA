@@ -1,7 +1,11 @@
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import dao.LocalDao;
-import pojo.Cadastro;
 import pojo.Local;
 
 public class LocalDaoTeste {
@@ -16,14 +20,17 @@ public class LocalDaoTeste {
 		 */
 		Local local = new Local();
 		LocalDao dao = new LocalDao();
+
 		dao.insert(local);
 		assertNotEquals("Não foi inserido", local.getId(), 0);	
 		
 		Local localConsulta = dao.consultById(local.getId());
 		assertSame("Consulta falhou",local, localConsulta);
+		
+
 	}
 	
-
+	
 	
 	@Test
 	public void remove() {

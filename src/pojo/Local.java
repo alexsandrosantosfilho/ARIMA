@@ -1,7 +1,5 @@
 package pojo;
 
-import java.util.Random;
-
 public class Local {
 	private double custo;
 	private String cadastro;
@@ -11,6 +9,12 @@ public class Local {
 	private Integer id;
 	
 	
+	
+	
+	public Local() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getId() {
 	    return id;
 	}

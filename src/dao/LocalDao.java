@@ -44,7 +44,7 @@ public class LocalDao {
 		// our SQL SELECT query.
 		// if you only need a few columns, specify them by name instead of using
 		// "*"
-		String sql = "INSERT INTO locais (cadastro) VALUES ('Testeeeeee')";
+		String sql = "INSERT INTO locais (cadastro) VALUES ('z')";
 
 		// create the java statement
 		PreparedStatement ps;

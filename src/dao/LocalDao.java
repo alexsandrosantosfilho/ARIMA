@@ -2,13 +2,12 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import java.sql.PreparedStatement;
-import java.sql.Statement;
 
 import pojo.Local;
 
@@ -22,7 +21,7 @@ public class LocalDao {
 
 		try {
 
-			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/sandro", "root", "");
+			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/jaoandmary", "root", "");
 		} catch (SQLException e) {
 			System.out.println("erro mysql " + e.getSQLState() + e.getMessage());
 			e.printStackTrace();
@@ -44,7 +43,22 @@ public class LocalDao {
 		// our SQL SELECT query.
 		// if you only need a few columns, specify them by name instead of using
 		// "*"
-		String sql = "INSERT INTO locais (cadastro) VALUES ('z')";
+		// String sql = "INSERT INTO Cadastro (nome) VALUES ('TESTE10')";
+		//
+		// // create the java statement
+		// PreparedStatement ps;
+		// try {
+		// ps = this.conn.prepareStatement(sql);
+		// ps.execute();
+		// } catch (SQLException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+
+	}
+
+	public void remove(Local local) {
+		String sql = "DELETE FROM `cadastro` WHERE `cadastro`.`id_cadastro` = 9";
 
 		// create the java statement
 		PreparedStatement ps;
@@ -55,15 +69,24 @@ public class LocalDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
-
-	public void remove(Local local) {
-		System.out.println(local);
 	}
 
 	public void update(Local local) {
+		Statement stmt = null;
+
+		// ResultSet rs = null;
 		System.out.println(local);
+		String sql = " UPDATE `cadastro` SET `nome` = 'alexxxxx' WHERE `cadastro`.`id_cadastro` = 1;";
+
+		// create the java statement
+		PreparedStatement ps;
+		try {
+			ps = this.conn.prepareStatement(sql);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Local consultById(Integer localId) {

@@ -42,7 +42,7 @@ public class LocalDaoTeste {
 		 */
 		Local local = new Local();
 		LocalDao dao = new LocalDao();
-		dao.insert(local);
+		dao.remove(local);
 		assertNotEquals("Não foi inserido", local.getId(), 0);	
 		dao.remove(local);
 		assertNotNull("Não foi removido", local.getId() );
@@ -57,7 +57,7 @@ public class LocalDaoTeste {
 	
 		Local local = new Local();
 		LocalDao dao = new LocalDao();
-		dao.insert(local);
+		dao.update(local);
 		assertNotEquals("Não foi inserido", local.getId(), 0);
 		local.setCusto(20);
 		dao.update(local);

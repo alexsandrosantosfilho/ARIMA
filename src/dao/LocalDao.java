@@ -20,7 +20,6 @@ public class LocalDao {
 		this.locais = new ArrayList<>();
 
 		try {
-
 			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/jaoandmary", "root", "");
 		} catch (SQLException e) {
 			System.out.println("erro mysql " + e.getSQLState() + e.getMessage());

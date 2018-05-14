@@ -42,50 +42,50 @@ public class LocalDao {
 		// our SQL SELECT query.
 		// if you only need a few columns, specify them by name instead of using
 		// "*"
-		// String sql = "INSERT INTO Cadastro (nome) VALUES ('TESTE10')";
-		//
-		// // create the java statement
-		// PreparedStatement ps;
-		// try {
-		// ps = this.conn.prepareStatement(sql);
-		// ps.execute();
-		// } catch (SQLException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
+		 String sql = "INSERT INTO Cadastro (nome) VALUES ('TESTE10')";
+		
+		 // create the java statement
+		 PreparedStatement ps;	
+		 try {
+		 ps = this.conn.prepareStatement(sql);
+		 ps.execute();
+		 } catch (SQLException e) {
+		 // TODO Auto-generated catch block
+		 e.printStackTrace();
+		 }
 
 	}
 
 	public void remove(Local local) {
-		String sql = "DELETE FROM `cadastro` WHERE `cadastro`.`id_cadastro` = 9";
-
-		// create the java statement
-		PreparedStatement ps;
-		try {
-			ps = this.conn.prepareStatement(sql);
-			ps.execute();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String sql = "DELETE FROM `cadastro` WHERE `cadastro`.`id_cadastro` = 9";
+//
+//		// create the java statement
+//		PreparedStatement ps;
+//		try {
+//			ps = this.conn.prepareStatement(sql);
+//			ps.execute();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public void update(Local local) {
-		Statement stmt = null;
-
-		// ResultSet rs = null;
-		System.out.println(local);
-		String sql = " UPDATE `cadastro` SET `nome` = 'alexxxxx' WHERE `cadastro`.`id_cadastro` = 1;";
-
-		// create the java statement
-		PreparedStatement ps;
-		try {
-			ps = this.conn.prepareStatement(sql);
-			ps.execute();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		Statement stmt = null;
+//
+//		// ResultSet rs = null;
+//		System.out.println(local);
+//		String sql = " UPDATE `cadastro` SET `nome` = 'alexxxxx' WHERE `cadastro`.`id_cadastro` = 1;";
+//
+//		// create the java statement
+//		PreparedStatement ps;
+//		try {
+//			ps = this.conn.prepareStatement(sql);
+//			ps.execute();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public Local consultById(Integer localId) {

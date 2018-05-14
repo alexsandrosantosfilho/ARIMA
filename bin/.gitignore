@@ -1,3 +1,7 @@
+/.scannerwork/
+/sonar-project.properties
+/LocalDaoTeste.class
+/Principal.class
 /dao/
-/UI/
 /pojo/
+/UI/

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -44,6 +45,7 @@ public class HomeFrame extends JFrame {
 	private JTextField textField_14;
 	private JTextField textField_15;
 	private JTextField textField_16;
+	private JTextField textField_17;
 
 	/**
 	 * Launch the application.
@@ -300,7 +302,7 @@ public class HomeFrame extends JFrame {
 		lblRazaosocial.setBounds(733, 138, 116, 14);
 		contentPane.add(lblRazaosocial);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Listar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -315,6 +317,28 @@ public class HomeFrame extends JFrame {
 		});
 		btnNewButton.setBounds(20, 223, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Excluir");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+					Cadastro cadastro= new Cadastro();
+					cadastro.setID(Integer.parseInt(textField_17.getText()));
+					LocalDao.remove(cadastro)
+			}
+		});
+		btnNewButton_1.setBounds(177, 298, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+		textField_17 = new JTextField();
+		textField_17.setColumns(10);
+		textField_17.setBounds(177, 267, 86, 20);
+		contentPane.add(textField_17);
+		
+		JLabel lblDeletarPorId = new JLabel("Deletar por id:");
+		lblDeletarPorId.setForeground(new Color(60, 179, 113));
+		lblDeletarPorId.setFont(new Font("Old English Text MT", Font.PLAIN, 24));
+		lblDeletarPorId.setBounds(153, 212, 203, 44);
+		contentPane.add(lblDeletarPorId);
 
 		Local local = new Local();
 		Cadastro cad = new Cadastro();

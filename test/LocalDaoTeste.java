@@ -21,7 +21,7 @@ public class LocalDaoTeste {
 		Local local = new Local();
 		LocalDao dao = new LocalDao();
 
-		dao.insert(local);
+		dao.insert();
 		assertNotEquals("Não foi inserido", local.getId(), 0);	
 		
 		Local localConsulta = dao.consultById(local.getId());

@@ -55,7 +55,7 @@ public class LocalDao {
 			sql.setString(1, cadastro.getNome_contato());
 			sql.setString(2, cadastro.getTelefone());
 			sql.setString(3, cadastro.getEmail());
-			//sql.setDate(4, cadastro.getDataAtualizacao());
+			// sql.setDate(4, cadastro.getDataAtualizacao());
 
 			sql.executeUpdate();
 			JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
@@ -74,10 +74,8 @@ public class LocalDao {
 
 		try {
 			sql = conn.prepareStatement("DELETE FROM cadastro WHERE id=?");
-			sql.setString(1, cadastro.getNome_contato());
-			sql.setString(2, cadastro.getTelefone());
-			sql.setString(3, cadastro.getEmail());
-			sql.setDate(4, cadastro.getDataAtualizacao());
+			sql.setInt(1, cadastro.getID());
+		
 
 			JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
 		} catch (SQLException ex) {
@@ -126,12 +124,12 @@ public class LocalDao {
 			ResultSet rs = st.executeQuery(query);
 			Local local;
 			while (rs.next()) {
-				local = new Local();
-				local.set
-				local.setCadastro(rs.getString("cadastro"));
-				local.setId(rs.getInt("id"));
+				// local = new Local();
+				// local.set
+				// local.setCadastro(rs.getString("cadastro"));
+				// local.setId(rs.getInt("id"));
 
-				this.locais.add(local);
+				// this.locais.add(local);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

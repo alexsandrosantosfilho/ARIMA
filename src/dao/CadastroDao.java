@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
 import pojo.Cadastro;
 import pojo.Local;
 
-public class LocalDao {
+public class CadastroDao {
 
-	private ArrayList<Local> locais;
+	private ArrayList<Cadastro> cadastros;
 	private Connection conn;
 
-	public LocalDao() {
-		this.locais = new ArrayList<>();
+	public CadastroDao() {
+		this.cadastros = new ArrayList<>();
 
 		try {
 			this.conn = DriverManager.getConnection("jdbc:mysql://localhost/jaoandmary", "root", "");
@@ -116,29 +116,29 @@ public class LocalDao {
 		return local;
 	}
 
-	public List<Local> get() {
-		String query = "SELECT id_cadastro, nome, telefone, email FROM cadastro";
+	public List<Cadastro> get() {
+		String query = "SELECT id_cadastro, nome, telefone, email, dataAtualizacao FROM cadastro";
 		// create the java statement
 		Statement st;
 		// execute the query, and get a java resultset
 		try {
 			st = (Statement) this.conn.createStatement();
 			ResultSet rs = st.executeQuery(query);
-			Local local;
+			Cadastro c;
 			while (rs.next()) {
-				local = new Local();
-				local.set
-				local.setCadastro(rs.getString("cadastro"));
-				local.setId(rs.getInt("id"));
-
-				this.locais.add(local);
+				c = new Cadastro();
+				c.setEmail(rs.getString("email"));
+				c.setID(rs.getInt("id_cadastro"));
+				c.setNome_contato(rs.getString("nome"));
+				c.setTelefone(rs.getString("telefone"));
+				this.cadastros.add(c);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return this.locais;
+		return this.cadastros;
 	}
 
 	public Integer getById(Integer localId) {

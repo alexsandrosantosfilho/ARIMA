@@ -1,13 +1,14 @@
 package pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Cadastro {
 
 	private String nome_contato;
 	private String telefone;
 	private String email;
-	private Date dataAtualização;
+	private Date dataAtualizacao;
+	private int ID;
 
 	public String getNome_contato() {
 		return nome_contato;
@@ -33,12 +34,20 @@ public class Cadastro {
 		this.email = email;
 	}
 
-	public Date getDataAtualização() {
-		return dataAtualização;
+	public Date getDataAtualizacao() {
+		return dataAtualizacao;
 	}
 
-	public void setDataAtualização(Date dataAtualização) {
-		this.dataAtualização = dataAtualização;
+	public void setDataAtualizacao(Date dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
 	}
 
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+	
 }
